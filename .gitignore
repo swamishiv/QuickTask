@@ -1,0 +1,31 @@
+# Node.js
+**/node_modules/
+**/dist/
+
+# .NET
+**/bin/
+**/obj/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Visual Studio
+.vs/
+**/.vs/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# User-specific files
+*.user
+*.suo

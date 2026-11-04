@@ -1,0 +1,857 @@
+
+/* =========================================
+   QuickTask - Global Theme
+========================================= */
+
+:root {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  color: #17243e;
+  background: #f5f7fc;
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-width: 320px;
+  background: #f5f7fc;
+  color: #17243e;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* =========================================
+   Main Layout
+========================================= */
+
+.qt-layout {
+  min-height: 100vh;
+  background: #f5f7fc !important;
+}
+
+.qt-main {
+  min-width: 0;
+  background: #f5f7fc !important;
+}
+
+.qt-content {
+  min-width: 0;
+  padding: 5px;
+  background: #f5f7fc !important;
+}
+
+.qt-section {
+  width: 100%;
+  margin-bottom: 30px;
+  scroll-margin-top: 90px;
+}
+
+.qt-section-heading {
+  margin-bottom: 18px;
+}
+
+.qt-section-heading h2,
+.qt-section-heading h3,
+.qt-section-heading h4 {
+  color: #17243e;
+  margin-bottom: 5px;
+}
+
+/* =========================================
+   Sidebar
+========================================= */
+
+.qt-sider,
+.qt-sider .ant-layout-sider-children {
+  background: #14213b !important;
+}
+
+.qt-sider {
+  flex-shrink: 0;
+}
+
+.qt-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 20px;
+  color: rgb(79, 70, 229) !important;
+  font-size: 23px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.qt-brand-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  background: linear-gradient(135deg, rgb(79, 70, 229), rgb(147, 51, 234));
+  color: #ffffff;
+  font-size: 24px;
+}
+.ant-menu-title-content{
+  font-weight: 750;
+   color: rgb(79, 70, 229) !important;
+}
+.qt-menu-label {
+  margin: 25px 22px 15px;
+  color: #91a5ca;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 1.5px;
+}
+
+.qt-menu.ant-menu-dark {
+  background: transparent !important;
+  border-inline-end: none !important;
+}
+
+.qt-menu.ant-menu-dark .ant-menu-item {
+  margin: 7px 8px;
+  width: calc(100% - 16px);
+  height: 48px;
+  line-height: 48px;
+  border-radius: 11px;
+ color: rgb(79, 70, 229) !important;
+}
+
+
+.qt-menu.ant-menu-dark {
+    --ant-menu-dark-item-selected-bg: linear-gradient(135deg, #60a5fa, #2563eb) !important;
+}
+
+.qt-menu.ant-menu-dark .ant-menu-item:hover {
+  color: rgb(79, 70, 229) !important;
+  background: rgb(255 255 255 / 8%) !important;
+}
+
+.qt-menu.ant-menu-dark .ant-menu-item-selected .ant-menu-title-content{
+  color: #ffffff !important;
+  background: linear-gradient(135deg, rgb(79, 70, 229), rgb(147, 51, 234));
+}
+
+.qt-sidebar-bottom {
+  margin-top: auto;
+  padding: 30px 20px 24px;
+  color: #ffffff;
+   display: none !important;
+}
+
+.qt-sidebar-illustration {
+  margin-bottom: 25px;
+  color: rgb(79, 70, 229) !important;
+  font-size: 48px;
+  text-align: left;
+}
+
+.qt-sidebar-title {
+  display: block;
+  color: rgb(79, 70, 229) !important;
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.8;
+}
+
+.qt-sidebar-description {
+  display: block;
+  margin-top: 10px;
+  color: rgb(79, 70, 229) !important;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   Header
+========================================= */
+
+.qt-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 84px;
+  padding: 0 30px;
+  background: #ffffff !important;
+  border-bottom: 1px solid #edf0f6;
+  line-height: normal;
+}
+
+.qt-header-caption {
+  color: #71809b !important;
+  font-size: 14px;
+}
+
+.qt-user-name {
+  color:rgb(79, 70, 229)  !important;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.qt-avatar {
+  color: #377cf6 !important;
+  background: #e9f0ff !important;
+}
+
+.qt-logout {
+  color: #71809b;
+}
+
+.qt-logout:hover {
+  color: #e05252 !important;
+  background: #fff1f1 !important;
+}
+
+.qt-menu-toggle {
+  color: #52627c;
+}
+
+/* =========================================
+   Welcome Banner
+========================================= */
+
+.qt-welcome-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 185px;
+  margin-bottom: 5px;
+  padding: 28px 34px;
+  overflow: hidden;
+  border: 1px solid #e5ebff;
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      #dce8ff 0,
+      transparent 30%
+    ),
+    linear-gradient(
+      115deg,
+      #ffffff 0%,
+      #eef2ff 55%,
+      #f4f0ff 100%
+    );
+  box-shadow: 0 8px 30px rgb(40 70 130 / 5%);
+}
+
+.qt-welcome-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+}
+
+.qt-eyebrow {
+  color: #477cf0 !important;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 1.8px;
+}
+
+.qt-welcome-banner .ant-typography {
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.qt-welcome-banner h2 {
+  color: #17243e;
+  font-size: clamp(23px, 3vw, 31px);
+  letter-spacing: -0.8px;
+}
+
+.qt-welcome-description {
+  color: #697995 !important;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.qt-welcome-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 155px;
+  height: 130px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 40%);
+}
+
+.qt-art-circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 88px;
+  height: 100px;
+  padding: 13px;
+  border: 3px solid #83a9fb;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgb(58 105 205 / 12%);
+  transform: rotate(-4deg);
+}
+
+.qt-art-circle span {
+  height: 20px;
+  padding-left: 5px;
+  border-bottom: 1px solid #e8edfa;
+  color: #3678f6;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.qt-art-sparkle {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  color: #f5ad37;
+  font-size: 29px;
+}
+
+/* =========================================
+   Dashboard Toolbar
+========================================= */
+
+.qt-dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  min-width: 0;
+}
+
+.qt-dashboard-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 0;
+      margin-right: 20px;
+    margin-left: 5px;
+}
+
+.qt-dashboard-toolbar h3.ant-typography {
+  margin: 6px 0;
+  color: #17243e;
+}
+
+.qt-dashboard-toolbar .ant-typography {
+  color: #64748b;
+}
+
+/* =========================================
+   Statistics Cards
+========================================= */
+
+.qt-dashboard,
+.qt-stats-grid {
+  width: 100%;
+  min-width: 0;
+}
+
+.qt-stat-card {
+  height: 100%;
+  min-height: 180px;
+  overflow: hidden;
+  border: 1px solid transparent !important;
+  border-radius: 17px !important;
+  box-shadow: 0 5px 20px rgb(32 54 100 / 5%);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.qt-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgb(32 54 100 / 9%);
+}
+
+.qt-stat-card .ant-card-body {
+  padding: 22px !important;
+}
+
+.qt-stat-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 17px;
+}
+
+.qt-stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  font-size: 20px;
+}
+
+.qt-stat-blue {
+  border-color: #d7e5ff !important;
+  background: linear-gradient(135deg, #ffffff, #edf4ff) !important;
+}
+
+.qt-stat-orange {
+  border-color: #ffe2bd !important;
+  background: linear-gradient(135deg, #ffffff, #fff3e2) !important;
+}
+
+.qt-stat-green {
+  border-color: #c9f0dc !important;
+  background: linear-gradient(135deg, #ffffff, #e8faf1) !important;
+}
+
+.qt-stat-purple {
+  border-color: #e1d2ff !important;
+  background: linear-gradient(135deg, #ffffff, #f3edff) !important;
+}
+
+.qt-stat-blue .qt-stat-icon {
+  color: #ffffff;
+  background: linear-gradient(135deg, #60a5fa, #2563eb);
+}
+
+.qt-stat-orange .qt-stat-icon {
+  color: #ffffff;
+  background: linear-gradient(135deg, #fbbf65, #f28a27);
+}
+
+.qt-stat-green .qt-stat-icon {
+  color: #ffffff;
+  background: linear-gradient(135deg, #4adea1, #0eaa78);
+}
+
+.qt-stat-purple .qt-stat-icon {
+  color: #ffffff;
+  background: linear-gradient(135deg, #b18aff, #8050e8);
+}
+
+.qt-stat-card .ant-statistic-title {
+  margin-bottom: 6px;
+  color: #697995;
+  font-size: 13px;
+}
+
+.qt-stat-card .ant-statistic-content {
+  color: #17243e;
+  font-size: 30px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.qt-stat-note {
+  display: block;
+  margin-top: 9px;
+  color: #8290a7;
+  font-size: 12px;
+}
+
+/* =========================================
+   Dashboard Lower Panels
+========================================= */
+
+.qt-dashboard-lower {
+  width: 100%;
+  margin-top: 0;
+}
+
+.qt-dashboard-lower > .ant-col {
+  min-width: 0;
+}
+
+.qt-panel {
+  height: 100%;
+  min-width: 0;
+  border: 1px solid #e7ecf5 !important;
+  border-radius: 17px !important;
+  background: #ffffff !important;
+  box-shadow: 0 5px 24px rgb(32 54 100 / 4%);
+}
+
+.qt-panel .ant-card-head {
+  min-height: 62px;
+  border-bottom: 1px solid #f0f2f7;
+}
+
+.qt-panel .ant-card-head-title {
+  color: #1e2d49;
+  font-weight: 700;
+  white-space: normal;
+}
+
+.qt-panel-title-icon {
+  margin-right: 10px;
+  color: #397df5;
+}
+
+/* =========================================
+   Productivity Panel
+========================================= */
+
+.qt-productivity-panel .ant-card-body {
+  padding: 24px;
+}
+
+.qt-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.qt-productivity-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: #f0e8ff;
+  color: #8b5cf6;
+  font-size: 20px;
+}
+
+.qt-productivity-score {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 28px 0 14px;
+}
+
+.qt-productivity-score h2 {
+  margin: 0;
+  color: #17243e;
+}
+
+.qt-progress-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 10px 4px 20px;
+}
+
+.qt-progress-number {
+  margin: 9px 0 !important;
+  color: #17243e !important;
+  font-size: 34px !important;
+}
+
+.qt-progress-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #f0f2f7;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.qt-productivity-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+  color: #667085;
+  font-size: 12px;
+}
+
+.qt-productivity-footer span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qt-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 7px;
+  border-radius: 50%;
+}
+
+.qt-dot-green {
+  background: #14b889;
+}
+
+.qt-dot-orange {
+  background: #f5a623;
+}
+
+/* =========================================
+   Recent Tasks
+========================================= */
+
+.qt-recent-panel .ant-card-body {
+  padding: 8px 22px 18px;
+}
+
+.qt-recent-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.qt-recent-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.qt-recent-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f2f7;
+}
+
+.qt-recent-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.qt-recent-icon,
+.qt-task-status-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  font-size: 17px;
+}
+
+.qt-recent-done,
+.qt-task-done {
+  color: #0c9d6d;
+  background: #e4f9ef;
+}
+
+.qt-recent-pending,
+.qt-task-pending {
+  color: #db8a13;
+  background: #fff2d8;
+}
+
+.qt-recent-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.qt-recent-title,
+.qt-recent-task-title {
+  overflow-wrap: anywhere;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.qt-recent-info .ant-typography-secondary {
+  font-size: 11px;
+}
+
+.qt-recent-task {
+  min-width: 0;
+  padding: 15px 0 !important;
+}
+
+.qt-recent-task .ant-list-item-meta {
+  min-width: 0;
+}
+
+.qt-recent-task .ant-list-item-meta-title {
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   Loading and Utilities
+========================================= */
+
+.qt-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 180px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* =========================================
+   Responsive Layout
+========================================= */
+
+@media (max-width: 991px) {
+  .qt-content {
+    padding: 22px;
+  }
+
+  .qt-welcome-banner {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .qt-header {
+    height: 70px;
+    padding: 0 14px;
+  }
+
+  .qt-header-caption {
+    display: none;
+  }
+
+  .qt-user-name {
+    display: none;
+  }
+
+  .qt-content {
+    padding: 16px;
+  }
+
+  .qt-welcome-banner {
+    min-height: 155px;
+    padding: 22px 18px;
+  }
+
+  .qt-welcome-art {
+    width: 65px;
+    height: 80px;
+  }
+
+  .qt-art-circle {
+    width: 56px;
+    height: 76px;
+    padding: 7px;
+  }
+
+  .qt-art-circle span {
+    font-size: 13px;
+  }
+
+  .qt-art-sparkle {
+    top: 3px;
+    right: 0;
+    font-size: 20px;
+  }
+
+  .qt-stat-card {
+    min-height: 165px;
+  }
+
+  .qt-stat-card .ant-card-body {
+    padding: 18px !important;
+  }
+
+  .qt-dashboard-toolbar {
+    align-items: stretch;
+  }
+
+  .qt-dashboard-toolbar .ant-btn {
+    width: 100%;
+  }
+
+  .qt-productivity-panel .ant-card-body {
+    padding: 18px;
+  }
+
+  .qt-recent-panel .ant-card-body {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .qt-progress-content {
+    align-items: flex-start;
+  }
+}
+
+/* Selected menu item */
+.qt-menu.ant-menu-dark .ant-menu-item-selected {
+    background: linear-gradient(135deg, rgb(79, 70, 229), rgb(147, 51, 234)) !important;
+    background-color: transparent !important;
+    border-radius: 11px !important;
+    color: #ffffff !important;
+}
+
+/* Remove separate icon background */
+.qt-menu.ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon {
+    background: transparent !important;
+    background-image: none !important;
+    color: #ffffff !important;
+}
+
+/* Icon and text */
+.qt-menu.ant-menu-dark .ant-menu-item-selected .anticon,
+.qt-menu.ant-menu-dark .ant-menu-item-selected .ant-menu-title-content {
+    background: transparent !important;
+    color: #ffffff !important;
+}
+
+/* Remove pseudo-element backgrounds */
+.qt-menu.ant-menu-dark .ant-menu-item-selected::before,
+.qt-menu.ant-menu-dark .ant-menu-item-selected::after {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Normal menu item hover */
+.qt-menu.ant-menu-dark .ant-menu-item:not(.ant-menu-item-selected):hover {
+    background:linear-gradient(135deg, rgb(79, 70, 229), rgb(147, 51, 234)) !important;
+    color: #ffffff !important;
+    border-radius: 11px !important;
+}
+
+/* Hover icon and text */
+.qt-menu.ant-menu-dark .ant-menu-item:not(.ant-menu-item-selected):hover .anticon,
+.qt-menu.ant-menu-dark .ant-menu-item:not(.ant-menu-item-selected):hover .ant-menu-title-content {
+    color: #ffffff !important;
+}
+
+/* Keep selected item gradient on hover */
+.qt-menu.ant-menu-dark .ant-menu-item-selected:hover {
+    background: linear-gradient(135deg, rgb(79, 70, 229), rgb(147, 51, 234)) !important;
+    color: #ffffff !important;
+}
+
+.ant-btn{
+   background: linear-gradient(135deg, rgb(79, 70, 229), rgb(147, 51, 234)) !important;
+   color: #ffffff !important;
+}

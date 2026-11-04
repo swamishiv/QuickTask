@@ -1,0 +1,1264 @@
+
+/* =========================================
+   QUICKTASK AUTHENTICATION PAGE
+========================================= */
+
+.qt-auth-page {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    background: #f5f6ff;
+    overflow: hidden;
+    font-family: Inter, "Segoe UI", sans-serif;
+    color: #101b45;
+}
+
+/* =========================================
+   LEFT HERO SECTION
+========================================= */
+
+.qt-auth-hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 38px 7%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 10% 10%, #c6dcff 0, transparent 40%),
+        radial-gradient(circle at 85% 20%, #e0d5ff 0, transparent 38%),
+        linear-gradient(145deg, #edf3ff, #f1edff 65%, #dce7ff);
+}
+
+.qt-auth-hero::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: rgba(133, 89, 255, 0.13);
+    top: -220px;
+    right: -160px;
+}
+
+.qt-auth-hero::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.13);
+    bottom: -230px;
+    left: -140px;
+}
+
+/* Brand */
+
+.qt-auth-brand,
+.qt-login-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.qt-auth-brand {
+    position: relative;
+    z-index: 2;
+}
+
+.qt-auth-logo {
+    width: 62px;
+    height: 62px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #7252ff, #4825d9);
+    color: #ffffff;
+    font-size: 35px;
+    box-shadow: 0 8px 20px rgba(91, 65, 230, 0.22);
+}
+
+.qt-auth-brand h1 {
+    margin: 0;
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: #111b3d;
+}
+
+.qt-auth-brand p {
+    margin: 1px 0 0;
+    color: #394b83;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+}
+
+/* Hero content */
+
+.qt-auth-hero-content {
+    position: relative;
+    z-index: 1;
+    margin-top: 55px;
+}
+
+.qt-auth-eyebrow {
+    display: inline-block;
+    color: #5540e8;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.qt-auth-main-heading.ant-typography {
+    color: #101b45;
+    font-size: clamp(36px, 3.5vw, 54px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -2px;
+    margin: 0 0 18px;
+}
+
+.qt-auth-main-heading span {
+    color: #6436ed;
+}
+
+.qt-auth-description {
+    display: block;
+    max-width: 580px;
+    color: #42527f;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* Features */
+
+.qt-auth-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 34px;
+    max-width: 600px;
+}
+
+.qt-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    color: #263d83;
+    font-size: 13px;
+    font-weight: 600;
+    border-right: 1px solid #b9a8ff;
+}
+
+.qt-feature:last-child {
+    border-right: none;
+}
+
+.qt-feature .anticon {
+    font-size: 27px;
+    color: #6236ee;
+    background: #e2dcff;
+    padding: 12px;
+    border-radius: 50%;
+}
+
+/* =========================================
+   DASHBOARD PREVIEW
+========================================= */
+
+.qt-preview-wrapper {
+    position: relative;
+    margin-top: 48px;
+    padding: 0 8px;
+    transform: rotate(-3deg);
+}
+
+.qt-dashboard-preview {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 12px;
+    box-shadow: 0 20px 45px rgba(47, 62, 130, 0.17);
+    border: 1px solid #e0e5ff;
+}
+
+.qt-preview-topbar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 9px 12px 15px;
+    border-bottom: 1px solid #edf0fa;
+    color: #52618d;
+    font-size: 12px;
+}
+
+.qt-window-dots {
+    display: flex;
+    gap: 5px;
+}
+
+.qt-window-dots i {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff6262;
+}
+
+.qt-window-dots i:nth-child(2) {
+    background: #ffbd45;
+}
+
+.qt-window-dots i:nth-child(3) {
+    background: #35c982;
+}
+
+.qt-preview-body {
+    display: grid;
+    grid-template-columns: 125px 1fr;
+    min-height: 230px;
+}
+
+.qt-preview-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    padding: 15px 10px;
+    background: #202a65;
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 11px;
+}
+
+.qt-preview-sidebar strong {
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.qt-preview-sidebar span {
+    padding: 7px;
+    border-radius: 6px;
+}
+
+.qt-preview-sidebar .active {
+    background: #7147eb;
+}
+
+.qt-preview-main {
+    padding: 15px;
+}
+
+.qt-preview-main h3 {
+    font-size: 17px;
+    color: #17234b;
+    margin: 0 0 16px;
+}
+
+.qt-preview-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.qt-preview-stats div {
+    padding: 12px 8px;
+    background: #f4f6ff;
+    border-radius: 9px;
+}
+
+.qt-preview-stats small {
+    display: block;
+    color: #7b87a7;
+    font-size: 10px;
+}
+
+.qt-preview-stats strong {
+    font-size: 20px;
+    color: #394bdb;
+}
+
+.qt-preview-stats .completed {
+    color: #16a36b;
+}
+
+.qt-preview-stats .pending {
+    color: #f59e0b;
+}
+
+.qt-preview-progress {
+    background: #f7f8ff;
+    padding: 12px;
+    border-radius: 9px;
+    margin-top: 12px;
+}
+
+.qt-preview-progress > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #52618d;
+    margin-bottom: 10px;
+}
+
+.qt-preview-progress strong {
+    color: #4f46e5;
+}
+
+.qt-progress-track {
+    height: 9px;
+    border-radius: 20px;
+    background: #e1e5f5;
+    overflow: hidden;
+}
+
+.qt-progress-track div {
+    height: 100%;
+    width: 75%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #4f8df9, #7742e9);
+}
+
+.qt-preview-message {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    margin-top: 12px;
+    color: #15966b;
+    font-size: 11px;
+}
+
+.qt-floating-note {
+    position: absolute;
+    right: -12px;
+    bottom: 25px;
+    padding: 16px 19px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 13px;
+    background: #ffdf80;
+    color: #26345c;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(50, 55, 100, 0.12);
+}
+
+.qt-floating-note .anticon {
+    font-size: 23px;
+    color: #7650e9;
+}
+
+.qt-auth-bottom-message {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 35px;
+    padding: 13px 22px;
+    width: fit-content;
+    border-radius: 30px;
+    background: rgba(75, 115, 245, 0.13);
+    color: #3b4fba;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* =========================================
+   RIGHT LOGIN SECTION
+========================================= */
+
+.qt-auth-form-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 7% 40px;
+    background:
+        radial-gradient(circle at 90% 5%, #e7ddff, transparent 35%),
+        linear-gradient(145deg, #f7f8ff, #ffffff);
+}
+
+.qt-auth-top-message {
+    position: absolute;
+    top: 36px;
+    right: 7%;
+    color: #4931c7;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.qt-auth-top-message span {
+    color: #7345ee;
+    margin-left: 5px;
+}
+
+/* Login Card */
+
+.qt-login-card.ant-card {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 18px 55px rgba(60, 64, 130, 0.10);
+    border: 1px solid #eeeaff;
+}
+
+.qt-login-card .ant-card-body {
+    padding: 38px 40px;
+}
+
+.qt-login-brand {
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.qt-login-brand .qt-auth-logo {
+    width: 64px;
+    height: 64px;
+}
+
+.qt-login-brand h2 {
+    margin: 0;
+    color: #101b45;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.qt-login-brand h2 span {
+    color: #6339ed;
+}
+
+.qt-login-heading {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.qt-login-heading .ant-typography {
+    display: block;
+}
+
+.qt-login-heading h2.ant-typography {
+    margin: 0 0 7px;
+    font-size: 30px;
+    font-weight: 750;
+    color: #111a3d;
+}
+
+.qt-login-heading span.ant-typography {
+    color: #74749f;
+    font-size: 15px;
+}
+
+/* Form */
+
+.qt-login-form {
+    margin-top: 20px;
+}
+
+.qt-login-form .ant-form-item {
+    margin-bottom: 23px;
+}
+
+.qt-login-form .ant-form-item-label > label {
+    color: #29365f;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.qt-login-form .ant-input-affix-wrapper,
+.qt-login-form .ant-input {
+    border-radius: 12px;
+}
+
+.qt-login-form .ant-input-affix-wrapper-lg {
+    min-height: 55px;
+    padding: 8px 15px;
+    border: 1px solid #dcd8f6;
+    box-shadow: none;
+}
+
+.qt-login-form .ant-input-affix-wrapper:hover,
+.qt-login-form .ant-input-affix-wrapper-focused {
+    border-color: #7951ed;
+}
+
+.qt-login-form .ant-input-prefix {
+    color: #6454aa;
+    font-size: 19px;
+    margin-right: 12px;
+}
+
+.qt-login-form input::placeholder {
+    color: #9292b5;
+}
+
+/* Login Button */
+
+.qt-login-button.ant-btn {
+    height: 55px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #8051f6, #5726df);
+    box-shadow: 0 8px 18px rgba(92, 54, 222, 0.22);
+    transition: all 0.25s ease;
+}
+
+.qt-login-button.ant-btn:hover {
+    background: linear-gradient(135deg, #6940e8, #4320c4) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(92, 54, 222, 0.30);
+}
+
+.qt-login-alert {
+    margin-bottom: 16px;
+    border-radius: 10px;
+}
+
+/* Registration link */
+
+.qt-login-register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 28px;
+    font-size: 14px;
+}
+
+.qt-login-register .ant-typography {
+    color: #646b8d;
+}
+
+.qt-login-register a {
+    color: #6435e9;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.qt-login-register a:hover {
+    color: #4120b8;
+}
+
+.qt-login-register a span {
+    margin-left: 5px;
+}
+
+/* Security footer */
+
+.qt-login-security {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    margin-top: 30px;
+    color: #4b42c4;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.qt-login-security .anticon {
+    font-size: 21px;
+    color: #3b6bf0;
+}
+
+.qt-login-security i {
+    font-style: normal;
+    color: #9889e9;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1100px) {
+    .qt-auth-page {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .qt-auth-hero {
+        padding: 30px 5%;
+    }
+
+    .qt-auth-hero-content {
+        margin-top: 45px;
+    }
+
+    .qt-preview-wrapper {
+        margin-top: 35px;
+    }
+
+    .qt-login-card .ant-card-body {
+        padding: 30px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .qt-auth-page {
+        grid-template-columns: 1fr;
+        overflow: visible;
+    }
+
+    .qt-auth-hero {
+        min-height: auto;
+        padding: 25px 22px 35px;
+    }
+
+    .qt-auth-hero-content {
+        margin-top: 40px;
+    }
+
+    .qt-auth-main-heading.ant-typography {
+        font-size: 38px;
+    }
+
+    .qt-auth-description {
+        font-size: 15px;
+    }
+
+    .qt-preview-wrapper {
+        margin-top: 35px;
+    }
+
+    .qt-auth-bottom-message {
+        margin-top: 30px;
+    }
+
+    .qt-auth-form-section {
+        min-height: auto;
+        padding: 75px 18px 35px;
+    }
+
+    .qt-auth-top-message {
+        top: 25px;
+        right: 22px;
+    }
+
+    .qt-login-card.ant-card {
+        max-width: 480px;
+    }
+}
+
+@media (max-width: 480px) {
+    .qt-auth-logo {
+        width: 49px;
+        height: 49px;
+        font-size: 27px;
+        border-radius: 14px;
+    }
+
+    .qt-auth-brand h1 {
+        font-size: 28px;
+    }
+
+    .qt-auth-features {
+        gap: 5px;
+    }
+
+    .qt-feature {
+        font-size: 11px;
+    }
+
+    .qt-feature .anticon {
+        font-size: 20px;
+        padding: 9px;
+    }
+
+    .qt-preview-body {
+        grid-template-columns: 90px 1fr;
+    }
+
+    .qt-preview-sidebar {
+        font-size: 9px;
+        padding: 10px 6px;
+    }
+
+    .qt-preview-stats {
+        gap: 4px;
+    }
+
+    .qt-preview-stats small {
+        font-size: 8px;
+    }
+
+    .qt-preview-stats strong {
+        font-size: 16px;
+    }
+
+    .qt-floating-note {
+        right: -3px;
+        padding: 10px;
+        font-size: 10px;
+    }
+
+    .qt-login-card .ant-card-body {
+        padding: 28px 20px;
+    }
+
+    .qt-login-brand h2 {
+        font-size: 29px;
+    }
+
+    .qt-login-heading h2.ant-typography {
+        font-size: 25px;
+    }
+
+    .qt-login-security {
+        gap: 7px;
+        font-size: 11px;
+    }
+}
+
+/* =========================================
+   DESKTOP - FIT FULL SCREEN WITHOUT SCROLL
+========================================= */
+
+@media (min-width: 769px) {
+
+    html,
+    body,
+    #root {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .qt-auth-page {
+        height: 100vh;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .qt-auth-hero {
+        height: 100vh;
+        min-height: 0;
+        padding: 25px 5%;
+        overflow: hidden;
+    }
+
+    .qt-auth-hero-content {
+        margin-top: 30px;
+    }
+
+    .qt-auth-main-heading.ant-typography {
+        font-size: clamp(34px, 3vw, 44px);
+        margin-bottom: 12px;
+    }
+
+    .qt-auth-description {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .qt-auth-features {
+        margin-top: 22px;
+    }
+
+    .qt-preview-wrapper {
+        margin-top: 28px;
+        transform: rotate(-2deg) scale(0.88);
+        transform-origin: top left;
+        width: 110%;
+    }
+
+    .qt-auth-bottom-message {
+        margin-top: 10px;
+    }
+
+    .qt-auth-form-section {
+        height: 100vh;
+        min-height: 0;
+        padding: 65px 5% 20px;
+        overflow-y: auto;
+    }
+
+    .qt-login-card .ant-card-body {
+        padding: 28px 35px;
+    }
+
+    .qt-login-brand {
+        margin-bottom: 15px;
+    }
+
+    .qt-login-heading {
+        margin-bottom: 18px;
+    }
+
+    .qt-login-form .ant-form-item {
+        margin-bottom: 17px;
+    }
+
+    .qt-login-security {
+        margin-top: 18px;
+    }
+}
+
+
+/* Main Layout */
+.qt-register-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  background: #ffffff;
+  font-family: inherit;
+}
+
+/* Left Hero Section */
+.qt-register-hero {
+  min-height: 100vh;
+  padding: 38px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255,255,255,.18), transparent 30%),
+    linear-gradient(135deg, #dce8ff 0%, #c9d5ff 45%, #e5d9ff 100%);
+  overflow: hidden;
+}
+
+.qt-register-hero-content {
+  width: 100%;
+  max-width: 570px;
+}
+
+.qt-register-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #252c58;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.qt-register-logo-icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  color: white;
+  font-size: 23px;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  box-shadow: 0 7px 18px rgba(79, 70, 229, .25);
+}
+
+.qt-register-intro {
+  margin-top: 48px;
+}
+
+.qt-register-eyebrow {
+  color: #6155c9 !important;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.qt-register-main-heading.ant-typography {
+  margin: 13px 0 !important;
+  color: #20264d;
+  font-size: clamp(35px, 3.4vw, 48px);
+  line-height: 1.16;
+  font-weight: 800;
+}
+
+.qt-register-main-heading span {
+  color: #6554db;
+}
+
+.qt-register-description {
+  display: block;
+  max-width: 480px;
+  color: #606b8d !important;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Benefits */
+.qt-register-benefits {
+  display: grid;
+  gap: 17px;
+  margin-top: 30px;
+}
+
+.qt-register-benefit {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.qt-register-benefit-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(255,255,255,.65);
+  color: #6355d8;
+  font-size: 19px;
+}
+
+.qt-register-benefit div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.qt-register-benefit div .ant-typography:first-child {
+  color: #30375f;
+  font-size: 14px;
+}
+
+.qt-register-benefit div .ant-typography:last-child {
+  color: #707b9b;
+  font-size: 12px;
+}
+
+/* Dashboard Preview */
+.qt-register-preview {
+  margin-top: 30px;
+  padding: 19px;
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 17px;
+  background: rgba(255,255,255,.73);
+  box-shadow: 0 15px 35px rgba(65, 75, 140, .10);
+  backdrop-filter: blur(12px);
+}
+
+.qt-register-preview-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.qt-register-preview-top > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.qt-register-preview-top .ant-typography:first-child {
+  color: #30375f;
+  font-size: 14px;
+}
+
+.qt-register-preview-top .ant-typography:last-child {
+  color: #8790aa;
+  font-size: 11px;
+}
+
+.qt-register-preview-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #16a36a;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.qt-register-preview-status span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #20bd82;
+}
+
+.qt-register-preview-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.qt-register-preview-stats > div {
+  padding: 12px;
+  border-radius: 11px;
+  background: #f7f8ff;
+}
+
+.qt-register-preview-stats .ant-typography:first-child {
+  color: #858ca5;
+  font-size: 11px;
+}
+
+.qt-register-preview-stats h3.ant-typography {
+  margin: 5px 0 0 !important;
+  color: #373d72;
+  font-size: 23px;
+}
+
+.qt-register-progress {
+  margin-top: 17px;
+}
+
+.qt-register-progress > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.qt-register-progress .ant-typography {
+  color: #727b98;
+  font-size: 11px;
+}
+
+.qt-register-progress .ant-typography strong {
+  color: #6253d7;
+}
+
+.qt-register-progress-track {
+  height: 7px;
+  border-radius: 10px;
+  background: #e7e9f6;
+  overflow: hidden;
+}
+
+.qt-register-progress-track span {
+  display: block;
+  width: 75%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #5c6be8, #9a54df);
+}
+
+.qt-register-bottom-message {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 20px;
+  color: #6b60c9;
+}
+
+.qt-register-bottom-message .ant-typography {
+  color: #626c8d;
+  font-size: 12px;
+}
+
+/* Right Form Section */
+.qt-register-form-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 7%;
+  background: #ffffff;
+}
+
+.qt-register-card {
+  width: 100%;
+  max-width: 455px;
+  border-radius: 20px !important;
+  box-shadow: none !important;
+}
+
+.qt-register-card .ant-card-body {
+  padding: 25px 30px;
+}
+
+.qt-register-mobile-logo {
+  display: none;
+}
+
+.qt-register-heading {
+  margin-bottom: 25px;
+}
+
+.qt-register-heading-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 17px;
+  border-radius: 14px;
+  color: #ffffff;
+  font-size: 21px;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+}
+
+.qt-register-heading h2.ant-typography {
+  margin: 0 0 7px !important;
+  color: #252b4d;
+  font-size: 29px;
+  font-weight: 800;
+}
+
+.qt-register-heading > .ant-typography:last-child {
+  color: #8a91a7;
+  font-size: 13px;
+}
+
+/* Form Fields */
+.qt-register-form .ant-form-item {
+  margin-bottom: 17px;
+}
+
+.qt-register-form .ant-form-item-label > label {
+  color: #3b4260;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.qt-register-form .ant-input-affix-wrapper,
+.qt-register-form .ant-input {
+  border-radius: 10px;
+}
+
+.qt-register-form .ant-input-affix-wrapper {
+  min-height: 45px;
+  border-color: #e2e5ef;
+}
+
+.qt-register-form .ant-input-affix-wrapper:hover,
+.qt-register-form .ant-input-affix-wrapper:focus,
+.qt-register-form .ant-input-affix-wrapper-focused {
+  border-color: #7662e7 !important;
+  box-shadow: 0 0 0 3px rgba(118, 98, 231, .09);
+}
+
+.qt-register-form .ant-input-prefix {
+  color: #939ab1;
+  margin-right: 10px;
+}
+
+.qt-register-submit {
+  height: 47px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  box-shadow: 0 7px 17px rgba(99, 75, 220, .22);
+}
+
+.qt-register-submit:hover {
+  background: linear-gradient(135deg, #4338ca, #7e22ce) !important;
+  transform: translateY(-1px);
+}
+
+/* Login Link and Footer */
+.qt-register-login-link {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 22px;
+  font-size: 13px;
+}
+
+.qt-register-login-link .ant-typography {
+  color: #858ca2;
+}
+
+.qt-register-login-link a {
+  color: #6654dc;
+  font-weight: 700;
+}
+
+.qt-register-login-link a:hover {
+  color: #9333ea;
+}
+
+.qt-register-security {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 26px;
+  padding-top: 17px;
+  border-top: 1px solid #f0f1f6;
+  color: #8b91a5;
+}
+
+.qt-register-security .anticon {
+  color: #20a878;
+}
+
+.qt-register-security .ant-typography {
+  color: #8b91a5;
+  font-size: 11px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .qt-register-page {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .qt-register-hero {
+    padding: 30px 6%;
+  }
+
+  .qt-register-form-section {
+    padding: 25px 4%;
+  }
+
+  .qt-register-card .ant-card-body {
+    padding: 20px 12px;
+  }
+
+  .qt-register-preview {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .qt-register-page {
+    display: block;
+    min-height: 100vh;
+  }
+
+  .qt-register-hero {
+    display: none;
+  }
+
+  .qt-register-form-section {
+    min-height: 100vh;
+    padding: 25px 18px;
+    align-items: center;
+  }
+
+  .qt-register-card {
+    max-width: 460px;
+  }
+
+  .qt-register-card .ant-card-body {
+    padding: 22px 12px;
+  }
+
+  .qt-register-mobile-logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 30px;
+    color: #4f46e5;
+    font-size: 21px;
+    font-weight: 800;
+  }
+
+  .qt-register-mobile-logo .anticon {
+    font-size: 25px;
+  }
+
+  .qt-register-heading h2.ant-typography {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 380px) {
+  .qt-register-form-section {
+    padding: 18px 12px;
+  }
+
+  .qt-register-card .ant-card-body {
+    padding: 15px 5px;
+  }
+}
+
