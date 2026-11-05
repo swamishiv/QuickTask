@@ -4,6 +4,7 @@ using quicktaskAPI.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using MySql.Data.MySqlClient;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,17 +15,42 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Database
-var connectionString =
-    builder.Configuration.GetConnectionString("DefaultConnection");
+// Select database
+var useAiven = builder.Configuration.GetValue<bool>("Database:UseAiven");
+
+var connectionString = builder.Configuration.GetConnectionString(
+    useAiven ? "AivenConnection" : "DefaultConnection"
+);
 
 if (string.IsNullOrWhiteSpace(connectionString))
 {
     throw new InvalidOperationException(
-        "Database connection string is missing.");
+        "Database connection string is missing."
+    );
 }
 
+// Configure Aiven SSL
+if (useAiven)
+{
+    var connectionBuilder =
+        new MySqlConnectionStringBuilder(connectionString)
+        {
+            SslMode = MySqlSslMode.VerifyCA,
+            SslCa = Path.Combine(
+                AppContext.BaseDirectory,
+                "Certificates",
+                "ca.pem"
+            )
+        };
+
+    connectionString = connectionBuilder.ConnectionString;
+}
+
+// Configure EF Core
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseMySQL(connectionString));
+    options.UseMySQL(connectionString)
+);
+
 
 // CORS
 builder.Services.AddCors(options =>
@@ -78,6 +104,26 @@ builder.Services
 
 
 var app = builder.Build();
+app.MapGet("/db-check", async (AppDbContext db) =>
+{
+    try
+    {
+        var connected = await db.Database.CanConnectAsync();
+
+        return Results.Ok(new
+        {
+            Database = useAiven ? "Aiven" : "Local MySQL",
+            Connected = connected
+        });
+    }
+    catch (Exception ex)
+    {
+        return Results.Problem(
+            title: "Database connection failed",
+            detail: ex.Message
+        );
+    }
+});
 
 if (app.Environment.IsDevelopment())
 {
